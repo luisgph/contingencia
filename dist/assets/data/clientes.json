@@ -1,0 +1,49 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Charles",
+      "apellidos": "Xavier",
+      "nacionalidad": "Peru",
+      "pais": "Ecuador",
+      "departamento": "Antioquia",
+      "ciudad": "Medellin",
+      "idioma": "Español",
+      "tipoDocumento": "PA",
+      "documento": "12345678",
+      "telefono": 2456789,
+      "telefonoMovil": 3100987654,
+      "correo": "pepito@gmail.com"
+    },
+    {
+      "id": 2,
+      "nombre": "Logan",
+      "apellidos": "Wolverine",
+      "nacionalidad": "Colombia",
+      "pais": "Colombia",
+      "departamento": "Valle del Cauca",
+      "ciudad": "Cali",
+      "idioma": "Ingles",
+      "tipoDocumento": "CE",
+      "documento": "12345678",
+      "telefono": 2456789,
+      "telefonoMovil": 3100987654,
+      "correo": "pepito@gmail.com"
+    },
+    {
+      "id": 3,
+      "nombre": "Faustino el tino",
+      "apellidos": "Asprilla",
+      "nacionalidad": "Ecuador",
+      "pais": "Estados Unidos",
+      "departamento": "Cundinamarca",
+      "ciudad": "Bogotá",
+      "idioma": "Portugues",
+      "tipoDocumento": "CC",
+      "documento": "12345678",
+      "telefono": 2456789,
+      "telefonoMovil": 3100987654,
+      "correo": "pepito@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]=""></ngx-loading>
+<nav class="navbar navbar-light bg-light animated fadeIn">
+    <a class="navbar-brand">
+        <img src="{{env.imgLogo}}" width="30" height="30" class="d-inline-block align-top" alt=""> Contingencia Clientes
+    </a>
+    <form class="form-inline" (ngSubmit)="get_ClientSearch(template)">
+        <select class="form-control mr-sm-2" id="fieldTipoDocumentoSearch" [(ngModel)]="_clientesServices.objClientes.documentType" name="documentType">
+      <option selected></option>
+      <option value="Número Viajero Frecuente">Número Viajero Frecuente</option>
+      <option *ngFor="let documentType of objDocumentType" [value]="documentType.name">{{documentType.name}}</option>
+    </select>
+
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="fieldSearch" [(ngModel)]="_clientesServices.objClientes.principalDocument" name="principalDocument">
+        <button class="btn btn-outline-dark my-2 my-sm-0">Buscar</button>
+    </form>
+</nav>
+<ng-template #template>
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Cliente no encontrado</h5>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        </div>
+        <div class="modal-body">
+            <p>¿Desea crear un nuevo cliente?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-dark" (click)="decline()">No</button>
+            <button type="button" class="btn btn-danger" (click)="confirm()" autofocus>Crear Cliente</button>
+        </div>
+    </div>
+</ng-template>
+<app-jumbotron class="m-md-1 animated fadeIn" *ngIf="!isJumbotron"></app-jumbotron>
+<form>
+    <div class="card animated fadeIn" *ngIf="clientHidden">
+        <h5 class="card-header form-inline text-white bg-danger">
+            Cliente
+        </h5>
+        <div class="card-body">
+            <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="_clientesServices.messageHiddenSuccess">
+                {{ _clientesServices.messageAlert }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="_clientesServices.messageHiddenDanger">
+                {{ _clientesServices.messageAlert }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <fieldset [disabled]="isCliente">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="fieldNombre">Nombre</label>
+                        <input type="text" class="form-control {{isValidFisrtName}}" id="fieldNombre" placeholder="Nombre" [(ngModel)]="objClientes.firstName" name="firstName">
+                        <div class="invalid-feedback">
+                            El campo nombre es requerido
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="fieldApellidos">Apellidos</label>
+                        <input type="text" class="form-control {{isValidLastName}}" id="fieldApellidos" placeholder="Apellidos" [(ngModel)]="objClientes.lastName" name="lastName">
+                        <div class="invalid-feedback">
+                            El campo apellidos es requerido
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldNacionalidad">Nacionalidad</label>
+                        <select class="form-control {{isValidNationality}}" id="fieldNacionalidad" [hidden]="!fieldHidden">
+              <option></option>
+              <option *ngFor="let country of objCountries" [value]="country.id">{{country.name}}</option>
+            </select>
+                        <div class="invalid-feedback">
+                            El campo nacionalidad es requerido
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="objClientes.nationality" name="nationality" [hidden]="fieldHidden">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldPais">Páis de Residencia</label>
+                        <select class="form-control {{isValidCountry}}" id="fieldPais" (change)="get_DepartmentById($event)" [hidden]="!fieldHidden">
+              <option></option>
+              <option *ngFor="let country of objCountries" [value]="country.id">{{country.name}}</option>
+            </select>
+                        <div class="invalid-feedback">
+                            El campo páis de residencia es requerido
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="objClientes.country" name="country" [hidden]="fieldHidden">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldDepartamento">Estado/Departamento de Residencia</label>
+                        <select class="form-control {{isValidDepartment}}" id="fieldDepartamento" (change)="get_CitiesById($event)" [hidden]="!fieldHidden">
+              <option></option>
+              <option *ngFor="let department of objDepartment" [value]="department.id">{{department.name}}</option>
+            </select>
+                        <div class="invalid-feedback">
+                            El campo estado/departamento de residencia es requerido
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="objClientes.department" name="department" [hidden]="fieldHidden">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldCiudad">Ciudad de Residencia</label>
+                        <select class="form-control {{isValidCity}}" id="fieldCiudad" [hidden]="!fieldHidden">
+              <option></option>
+              <option *ngFor="let city of objCity" [value]="city.id">{{city.name}}</option>
+            </select>
+                        <div class="invalid-feedback">
+                            El campo ciudad de residencia es requerido
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="objClientes.city" name="city" [hidden]="fieldHidden">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldIdioma">Idioma de Contacto</label>
+                        <select class="form-control {{isValidIdiom}}" id="fieldIdioma" [hidden]="!fieldHidden">
+              <option></option>
+              <option *ngFor="let idiom of objIdiom" [value]="idiom.id">{{idiom.name}}</option>
+            </select>
+                        <div class="invalid-feedback">
+                            El campo idioma de contacto es requerido
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="objClientes.idiom" name="idiom" [hidden]="fieldHidden">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldTipoDocumento">Tipo de Documento Principal</label>
+                        <select class="form-control {{isValidDocumentType}}" id="fieldTipoDocumento" [hidden]="!fieldHidden">
+              <option></option>
+              <option *ngFor="let documentType of objDocumentType" [value]="documentType.id">{{documentType.name}}</option>
+            </select>
+                        <div class="invalid-feedback">
+                            El campo tipo de documento principal es requerido
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="objClientes.documentType" name="documentType" [hidden]="fieldHidden">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldDocuemnto">Documento Principal</label>
+                        <input type="text" class="form-control {{isValidPrincipalDocument}}" id="fieldDocuemnto" placeholder="Documento Principal" [(ngModel)]="objClientes.principalDocument" name="principalDocument">
+                        <div class="invalid-feedback">
+                            El campo documento principal es requerido
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldTelefono">Teléfono</label>
+                        <input type="text" class="form-control {{isValidComunication}}" id="fieldTelefono" placeholder="Teléfono" [(ngModel)]="objClientes.phone" name="phone">
+                        <div class="invalid-feedback">
+                            El campo teléfono es opcional
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="fieldTelefonoMovil">Teléfono Móvil</label>
+                        <input type="text" class="form-control {{isValidComunication}}" id="fieldTelefonoMovil" placeholder="Teléfono Móvil" [(ngModel)]="objClientes.cellPhone" name="cellPhone">
+                        <div class="invalid-feedback">
+                            El campo teléfono móvil es opcional
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="fieldCorreo">Correo</label>
+                        <input type="email" class="form-control {{isValidComunication}}" id="fieldCorreo" placeholder="name@example.com" [(ngModel)]="objClientes.mail" name="mail">
+                        <div class="invalid-feedback">
+                            El campo correo es opcional
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger" (click)="guardarCliente()">Guardar</button>
+            </fieldset>
+        </div>
+    </div>
+</form>
+<hr />
+<fieldset [hidden]="!isClase">
+    <div class="card animated fadeIn">
+        <h5 class="card-header text-white bg-danger">Caso</h5>
+        <div class="card-body">
+            <app-tipificacion #tipificacionHijo></app-tipificacion>
+        </div>
+    </div>
+</fieldset>

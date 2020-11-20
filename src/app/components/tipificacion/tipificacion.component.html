@@ -1,0 +1,103 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]=""></ngx-loading>
+<div class="row">
+    <div class="col-md-6">
+        <form>
+            <fieldset [disabled]="isTipificacion">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Datos Básicos</h5>
+                        <div class="form-row">
+                            <div class="col-sm-12 mb-3">
+                                <label for="fieldTituloCaso">Título de caso</label>
+                                <input type="text" class="form-control {{isValidTitleCase}}" id="fieldTituloCaso" placeholder="Título de caso" name="caseTitle" [(ngModel)]="objCase.caseTitle" required autofocus>
+                                <div class="invalid-feedback">
+                                    El campo título caso es requerido
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 mb-3">
+                                <label for="fieldOrigenCaso">Origen Caso</label>
+                                <input type="text" class="form-control" id="fieldOrigenCaso" placeholder="Origen caso" name="caseOrigin" [(ngModel)]="objCase.caseOrigin" disabled value="Presencial" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 mb-3">
+                                <label for="fieldDescripcion">Descripción</label>
+                                <textarea class="form-control {{isValidDescription}}" id="fieldDescripcion" rows="2" placeholder="Descripción" [(ngModel)]="objCase.description" name="description"></textarea>
+                                <div class="invalid-feedback">
+                                    El campo descripción es requerido
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="card-title">Tipificación del Caso</h5>
+                        <div class="form-group">
+                            <label for="fieldMomento">Momento</label>
+                            <select class="form-control {{isValidMoment}}" id="fieldMomento" (change)="get_ActivitiesByMomentId($event)" name="momento">
+                <option></option>
+                <option *ngFor="let moment of objMoments" [value]="moment.moment_Id">{{moment.name}}</option>
+              </select>
+                            <div class="invalid-feedback">
+                                El campo momento es requerido
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fieldAcividadMomento">Actividad Momento</label>
+                            <select class="form-control {{isValidActivity}}" id="fieldAcividadMomento" name="acividadmomento" (change)="get_ReasonByActivityId($event)">
+                <option></option>
+                <option *ngFor="let activity of objActivity" [value]="activity.activity_Id">{{activity.name}}</option>
+              </select>
+                            <div class="invalid-feedback">
+                                El campo actividad momento es requerido
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fieldRazon">Razón</label>
+                            <select class="form-control {{isValidReason}}" id="fieldRazon" name="razon" (change)="get_ReasonDetailByReasonId($event)">
+                <option></option>
+                <option *ngFor="let reason of objReason" [value]="reason.reason_Id">{{reason.name}}</option>
+              </select>
+                            <div class="invalid-feedback">
+                                El campo razón es requerido
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fieldDetalleRazon">Detalle Razón</label>
+                            <select class="form-control {{isValidReasonDetail}}" id="fieldDetalleRazon" name="detailReasonId" (change)="get_MotiveByReasonDetailId($event)">
+                <option></option>
+                <option *ngFor="let reasonDetail of objReasonDetail" [value]="reasonDetail.reasonDetail_Id">{{reasonDetail.name}}</option>
+              </select>
+                            <div class="invalid-feedback">
+                                El campo detalle razón es requerido
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fieldMotivo">Motivo</label>
+                            <select class="form-control {{isValidMotive}}" id="fieldMotivo" name="motiveId">
+                <option></option>
+                <option *ngFor="let motive of objMotive" [value]="motive.motive_Id">{{motive.name}}</option>
+              </select>
+                            <div class="invalid-feedback">
+                                El campo motivo es requerido
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fieldFuente">Fuente</label>
+                            <select class="form-control {{isValidSource}}" id="fieldFuente">
+                <option></option>
+                <option *ngFor="let source of objSource" [value]="source.source_Id">{{source.name}}</option>
+              </select>
+                            <div class="invalid-feedback">
+                                El campo fuente es requerido
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger" (click)="guardarCaso()">Guardar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <app-datos-complementarios [hidden]="!isComplentaryData" #datosComplementarioHijo></app-datos-complementarios>
+    </div>
+</div>

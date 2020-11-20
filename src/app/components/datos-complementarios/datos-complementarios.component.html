@@ -1,0 +1,318 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Datos Complementarios</h5>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldAerolineaHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldAerolinea">
+          Aerolínea
+        </label>
+        <input type="text" class="form-control" id="fieldAerolinea" placeholder="Aerolínea" [(ngModel)]="objComplementaryDataField.fieldAerolinea" name="fieldAerolinea">
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldAHLHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldAHL">
+          AHL
+        </label>
+        <input type="text" class="form-control" id="fieldAHL" placeholder="AHL" [(ngModel)]="objComplementaryDataField.fieldAHL" name="fieldAHL"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldBaseHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldBase">
+          Base
+        </label>
+        <input type="text" class="form-control" id="fieldBase" placeholder="Base" [(ngModel)]="objComplementaryDataField.fieldBase" name="fieldBase"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCabinaHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCabina">
+          Cabina
+        </label>
+        <input type="text" class="form-control" id="fieldCabina" placeholder="Cabina" [(ngModel)]="objComplementaryDataField.fieldCabina" name="fieldCabina"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCanalChequeoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCanalChequeo">
+          Canal de Chequeo
+        </label>
+        <input type="text" class="form-control" id="fieldCanalChequeo" placeholder="Canal de Chequeo" [(ngModel)]="objComplementaryDataField.fieldCanalChequeo" name="fieldCanalChequeo"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCanalCompraHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCanalCompra">
+          Canal de Compra
+        </label>
+        <input type="text" class="form-control" id="fieldCanalCompra" placeholder="Canal de Compra" [(ngModel)]="objComplementaryDataField.fieldCanalCompra" name="fieldCanalCompra"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCantidadPasajerosHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCantidadPasajeros"  >
+          Cantidad de Pasajeros
+        </label>
+        <input type="text" class="form-control" id="fieldCantidadPasajeros" placeholder="Cantidad de Pasajeros" [(ngModel)]="objComplementaryDataField.fieldCantidadPasajeros" name="fieldCantidadPasajeros"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCantidadPasajerosAdultosHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCantidadPasajerosAdultos"  >
+          Cantidad de Pasajeros Adultos
+        </label>
+        <input type="text" class="form-control" id="fieldCantidadPasajerosAdultos" placeholder="Cantidad de Pasajeros Adultos" [(ngModel)]="objComplementaryDataField.fieldCantidadPasajerosAdultos" name="fieldCantidadPasajerosAdultos"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCantidadPasajerosInfantesHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCantidadPasajerosInfantes"  >
+          Cantidad de Pasajeros Infantes
+        </label>
+        <input type="text" class="form-control" id="fieldCantidadPasajerosInfantes" placeholder="Cantidad de Pasajeros Infantes" [(ngModel)]="objComplementaryDataField.fieldCantidadPasajerosInfantes" name="fieldCantidadPasajerosInfantes"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCantidadPasajerosNinosHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCantidadPasajerosNinos"  >
+          Cantidad de Pasajeros Niños
+        </label>
+        <input type="text" class="form-control" id="fieldCantidadPasajerosNinos" placeholder="Cantidad de Pasajeros Niños" [(ngModel)]="objComplementaryDataField.fieldCantidadPasajerosNinos" name="fieldCantidadPasajerosNinos"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCiudadEmisionHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCiudadEmision"  >
+          Ciudad de Emisión
+        </label>
+        <input type="text" class="form-control" id="fieldCiudadEmision" placeholder="Ciudad de Emisión" [(ngModel)]="objComplementaryDataField.fieldCiudadEmision" name="fieldCiudadEmision"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldClaseTarifariaHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldClaseTarifaria"  >
+          Clase Tarifaria
+        </label>
+        <input type="text" class="form-control" id="fieldClaseTarifaria" placeholder="Clase Tarifaria" [(ngModel)]="objComplementaryDataField.fieldClaseTarifaria" name="fieldClaseTarifaria"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCodigoReservaHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCodigoReserva"  >
+          Código de Reserva
+        </label>
+        <input type="text" class="form-control" id="fieldCodigoReserva" placeholder="Código de Reserva" [(ngModel)]="objComplementaryDataField.fieldCodigoReserva" name="fieldCodigoReserva"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldCodigoPromocionalHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldCodigoPromocional"  >
+          Código Promocional
+        </label>
+        <input type="text" class="form-control" id="fieldCodigoPromocional" placeholder="Código Promocional" [(ngModel)]="objComplementaryDataField.fieldCodigoPromocional" name="fieldCodigoPromocional"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldDestinoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldDestino"  >
+          Destino
+        </label>
+        <input type="text" class="form-control" id="fieldDestino" placeholder="Destino" [(ngModel)]="objComplementaryDataField.fieldDestino" name="fieldDestino"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldDetalleRazonHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldDetalleRazon"  >
+          Detalle razón (Complementaria)
+        </label>
+        <input type="text" class="form-control" id="fieldDetalleRazon" placeholder="Detalle razón (Complementaria)" [(ngModel)]="objComplementaryDataField.fieldDetalleRazon" name="fieldDetalleRazon"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldDPRHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldDPR"  >
+          DPR
+        </label>
+        <input type="text" class="form-control" id="fieldDPR" placeholder="DPR" [(ngModel)]="objComplementaryDataField.fieldDPR" name="fieldDPR"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldEtiquetaEquipajeHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldEtiquetaEquipaje"  >
+          Etiqueta de Equipaje
+        </label>
+        <input type="text" class="form-control" id="fieldEtiquetaEquipaje" placeholder="Etiqueta de Equipaje" [(ngModel)]="objComplementaryDataField.fieldEtiquetaEquipaje" name="fieldEtiquetaEquipaje"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldFechaVueloHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldFechaVuelo"  >
+          Fecha de Vuelo
+        </label>
+        <input type="text" class="form-control" id="fieldFechaVuelo" placeholder="Fecha de Vuelo" [(ngModel)]="objComplementaryDataField.fieldFechaVuelo" name="fieldFechaVuelo"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldIrregularidadHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldIrregularidad"  >
+          Irregularidad
+        </label>
+        <input type="text" class="form-control" id="fieldIrregularidad" placeholder="Irregularidad" [(ngModel)]="objComplementaryDataField.fieldIrregularidad" name="fieldIrregularidad"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldNombreColaboradorHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldNombreColaborador"  >
+          Nombre de Colaborador
+        </label>
+        <input type="text" class="form-control" id="fieldNombreColaborador" placeholder="Nombre de Colaborador" [(ngModel)]="objComplementaryDataField.fieldNombreColaborador" name="fieldNombreColaborador"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldNombreHerramientaHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldNombreHerramienta"  >
+          Nombre de la herramienta
+        </label>
+        <input type="text" class="form-control" id="fieldNombreHerramienta" placeholder="Nombre de la herramienta" [(ngModel)]="objComplementaryDataField.fieldNombreHerramienta" name="fieldNombreHerramienta"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldNumeroBoletoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldNumeroBoleto"  >
+          Número de Boleto
+        </label>
+        <input type="text" class="form-control" id="fieldNumeroBoleto" placeholder="Número de Boleto" [(ngModel)]="objComplementaryDataField.fieldNumeroBoleto" name="fieldNumeroBoleto"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldNumeroCasoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldNumeroCaso"  >
+          Número de Caso
+        </label>
+        <input type="text" class="form-control" id="fieldNumeroCaso" placeholder="Número de Caso" [(ngModel)]="objComplementaryDataField.fieldNumeroCaso" name="fieldNumeroCaso"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldNumeroEMDHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldNumeroEMD"  >
+          Número de EMD
+        </label>
+        <input type="text" class="form-control" id="fieldNumeroEMD" placeholder="Número de EMD" [(ngModel)]="objComplementaryDataField.fieldNumeroEMD" name="fieldNumeroEMD"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldNumeroVueloHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldNumeroVuelo"  >
+          Número de Vuelo
+        </label>
+        <input type="text" class="form-control" id="fieldNumeroVuelo" placeholder="Número de Vuelo" [(ngModel)]="objComplementaryDataField.fieldNumeroVuelo" name="fieldNumeroVuelo"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldObjetoOlvidadoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldObjetoOlvidado"  >
+          Objeto olvidado (Fitems)
+        </label>
+        <input type="text" class="form-control" id="fieldObjetoOlvidado" placeholder="Objeto olvidado (Fitems)" [(ngModel)]="objComplementaryDataField.fieldObjetoOlvidado" name="fieldObjetoOlvidado"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldOrigenHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldOrigen"  >
+          Origen
+        </label>
+        <input type="text" class="form-control" id="fieldOrigen" placeholder="Origen" [(ngModel)]="objComplementaryDataField.fieldOrigen" name="fieldOrigen"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldPlacaBoletoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldPlacaBoleto"  >
+          Placa de Boleto
+        </label>
+        <input type="text" class="form-control" id="fieldPlacaBoleto" placeholder="Placa de Boleto" [(ngModel)]="objComplementaryDataField.fieldPlacaBoleto" name="fieldPlacaBoleto"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldPlacaBoletodeEMDHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldPlacaBoletodeEMD"  >
+          Placa de Boleto de EMD
+        </label>
+        <input type="text" class="form-control" id="fieldPlacaBoletodeEMD" placeholder="Placa de Boleto de EMD" [(ngModel)]="objComplementaryDataField.fieldPlacaBoletodeEMD" name="fieldPlacaBoletodeEMD"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldRazonHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldRazon"  >
+          Razón (Complementaria)
+        </label>
+        <input type="text" class="form-control" id="fieldRazon" placeholder="Razón (Complementaria)" [(ngModel)]="objComplementaryDataField.fieldRazon" name="fieldRazon"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldTipoAcumulacionoRedencionHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldTipoAcumulacionoRedencion"  >
+          Tipo de Acumulación o Redención
+        </label>
+        <input type="text" class="form-control" id="fieldTipoAcumulacionoRedencion" placeholder="Tipo de Acumulación o Redención" [(ngModel)]="objComplementaryDataField.fieldTipoAcumulacionoRedencion" name="fieldTipoAcumulacionoRedencion"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldTipoBoletoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldTipoBoleto"  >
+          Tipo de Boleto
+        </label>
+        <input type="text" class="form-control" id="fieldTipoBoleto" placeholder="Tipo de Boleto" [(ngModel)]="objComplementaryDataField.fieldTipoBoleto" name="fieldTipoBoleto"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldTipoCompraHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldTipoCompra"  >
+          Tipo de compra
+        </label>
+        <input type="text" class="form-control" id="fieldTipoCompra" placeholder="Tipo de compra" [(ngModel)]="objComplementaryDataField.fieldTipoCompra" name="fieldTipoCompra"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldTipoElementoDanadoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldTipoElementoDanado"  >
+          Tipo de Elemento Dañado
+        </label>
+        <input type="text" class="form-control" id="fieldTipoElementoDanado" placeholder="Tipo de Elemento Dañado" [(ngModel)]="objComplementaryDataField.fieldTipoElementoDanado" name="fieldTipoElementoDanado"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldTipoInconsistenciaHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldTipoInconsistencia"  >
+          Tipo de inconsistencia
+        </label>
+        <input type="text" class="form-control" id="fieldTipoInconsistencia" placeholder="Tipo de inconsistencia" [(ngModel)]="objComplementaryDataField.fieldTipoInconsistencia" name="fieldTipoInconsistencia"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldTipoManejoEspecialHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldTipoManejoEspecial"  >
+          Tipo de Manejo Especial
+        </label>
+        <input type="text" class="form-control" id="fieldTipoManejoEspecial" placeholder="Tipo de Manejo Especial" [(ngModel)]="objComplementaryDataField.fieldTipoManejoEspecial" name="fieldTipoManejoEspecial"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldViajeroFrecuenteaUnificarHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldViajeroFrecuenteaUnificar"  >
+          Viajero Frecuente a Unificar
+        </label>
+        <input type="text" class="form-control" id="fieldViajeroFrecuenteaUnificar" placeholder="Viajero Frecuente a Unificar" [(ngModel)]="objComplementaryDataField.fieldViajeroFrecuenteaUnificar" name="fieldViajeroFrecuenteaUnificar"  >
+      </div>
+    </div>
+    <div class="form-row" [hidden]="objComplementaryDataField.fieldViajeroFrecuenteActivoHidden">
+      <div class="col-sm-12 mb-3">
+        <label for="fieldViajeroFrecuenteActivo"  >
+          Viajero Frecuente Activo
+        </label>
+        <input type="text" class="form-control" id="fieldViajeroFrecuenteActivo" placeholder="Viajero Frecuente Activo" [(ngModel)]="objComplementaryDataField.fieldViajeroFrecuenteActivo" name="fieldViajeroFrecuenteActivo"  >
+      </div>
+    </div>
+    <button type="submit" class="btn btn-danger">Guardar</button>
+  </div>
+</div>

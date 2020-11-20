@@ -1,0 +1,88 @@
+export class ComplementaryData {
+  id: string;
+  name: string;
+  isRequired: number = 0;
+  isHide: number = 0
+}
+
+export class ComplementaryDataFields {
+  fieldAerolinea: string;
+  fieldAerolineaHidden: boolean = true;
+  fieldAHL: string;
+  fieldAHLHidden: boolean = true;
+  fieldBase: string;
+  fieldBaseHidden: boolean = true;
+  fieldCabina: string;
+  fieldCabinaHidden: boolean = true;
+  fieldCanalChequeo: string;
+  fieldCanalChequeoHidden: boolean = true;
+  fieldCanalCompra: string;
+  fieldCanalCompraHidden: boolean = true;
+  fieldCantidadPasajeros: string;
+  fieldCantidadPasajerosHidden: boolean = true;
+  fieldCantidadPasajerosAdultos: string;
+  fieldCantidadPasajerosAdultosHidden: boolean = true;
+  fieldCantidadPasajerosInfantes: string;
+  fieldCantidadPasajerosInfantesHidden: boolean = true;
+  fieldCantidadPasajerosNinos: string;
+  fieldCantidadPasajerosNinosHidden: boolean = true;
+  fieldCiudadEmision: string;
+  fieldCiudadEmisionHidden: boolean = true;
+  fieldClaseTarifaria: string;
+  fieldClaseTarifariaHidden: boolean = true;
+  fieldCodigoReserva: string;
+  fieldCodigoReservaHidden: boolean = true;
+  fieldCodigoPromocional: string;
+  fieldCodigoPromocionalHidden: boolean = true;
+  fieldDestino: string;
+  fieldDestinoHidden: boolean = true;
+  fieldDetalleRazon: string;
+  fieldDetalleRazonHidden: boolean = true;
+  fieldDPR: string;
+  fieldDPRHidden: boolean = true;
+  fieldEtiquetaEquipaje: string;
+  fieldEtiquetaEquipajeHidden: boolean = true;
+  fieldFechaVuelo: string;
+  fieldFechaVueloHidden: boolean = true;
+  fieldIrregularidad: string;
+  fieldIrregularidadHidden: boolean = true;
+  fieldNombreColaborador: string;
+  fieldNombreColaboradorHidden: boolean = true;
+  fieldNombreHerramienta: string;
+  fieldNombreHerramientaHidden: boolean = true;
+  fieldNumeroBoleto: string;
+  fieldNumeroBoletoHidden: boolean = true;
+  fieldNumeroCaso: string;
+  fieldNumeroCasoHidden: boolean = true;
+  fieldNumeroEMD: string;
+  fieldNumeroEMDHidden: boolean = true;
+  fieldNumeroVuelo: string;
+  fieldNumeroVueloHidden: boolean = true;
+  fieldObjetoOlvidado: string;
+  fieldObjetoOlvidadoHidden: boolean = true;
+  fieldOrigen: string;
+  fieldOrigenHidden: boolean = true;
+  fieldPlacaBoleto: string;
+  fieldPlacaBoletoHidden: boolean = true;
+  fieldPlacaBoletodeEMD: string;
+  fieldPlacaBoletodeEMDHidden: boolean = true;
+  fieldRazon: string;
+  fieldRazonHidden: boolean = true;
+  fieldTipoAcumulacionoRedencion: string;
+  fieldTipoAcumulacionoRedencionHidden: boolean = true;
+  fieldTipoBoleto: string;
+  fieldTipoBoletoHidden: boolean = true;
+  fieldTipoCompra: string;
+  fieldTipoCompraHidden: boolean = true;
+  fieldTipoElementoDanado: string;
+  fieldTipoElementoDanadoHidden: boolean = true;
+  fieldTipoInconsistencia: string;
+  fieldTipoInconsistenciaHidden: boolean = true;
+  fieldTipoManejoEspecial: string;
+  fieldTipoManejoEspecialHidden: boolean = true;
+  fieldViajeroFrecuenteaUnificar: string;
+  fieldViajeroFrecuenteaUnificarHidden: boolean = true;
+  fieldViajeroFrecuenteActivo: string;
+  fieldViajeroFrecuenteActivoHidden: boolean = true;
+}
+
